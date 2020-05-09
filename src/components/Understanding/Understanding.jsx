@@ -15,7 +15,15 @@ class Understanding extends Component {
   render() {
     return (
       <div>
-        <p>Head to supported!<button onClick={this.handleClick}>Click here</button></p>
+          <h1>How well are you understanding the material today?</h1>
+          <select id="understanding">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+          </select>
+        <p>Head to supported!<button onClick={this.handleClick}>Next</button></p>
       </div>
     );
   }

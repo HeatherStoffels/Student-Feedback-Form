@@ -12,7 +12,9 @@ class Comments extends Component {
   render() {
     return (
       <div>
-        <p>Head to review!<button onClick={this.handleClick}>Click here</button></p>
+          <h1>Any additional comments you would like to share?</h1>
+          <input type="text" placeholder="comments" />
+        <p>Head to review! <button onClick={this.handleClick}>Click here</button></p>
       </div>
     );
   }

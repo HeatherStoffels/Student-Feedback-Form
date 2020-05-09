@@ -28,8 +28,6 @@ class App extends Component {
           <Route path='/supported' render={(props) => <Supported {...props} dispatch={this.props.dispatch}/>} />
           <Route path='/comments' render={(props) => <Comments {...props} dispatch={this.props.dispatch}/>} />
           <Route path='/reviewing' render={(props) => <Reviewing {...props} dispatch={this.props.dispatch}/>} />
-        
-          
           </HashRouter>
         <br/>
        
