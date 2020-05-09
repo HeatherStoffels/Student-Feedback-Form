@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import './App.css';
 import { connect } from "react-redux";
-import { HashRouter, Route, Link } from "react-router-dom";
+import { HashRouter, Route} from "react-router-dom";
 import Feeling from "../Feeling/Feeling"
 import Understanding from "../Understanding/Understanding"
 import Supported from "../Supported/Supported"
@@ -10,6 +10,10 @@ import Comments from "../Comments/Comments"
 import Reviewing from "../Reviewing/Reviewing"
 
 class App extends Component {
+
+    componentDidMount(){
+        console.log("in app.js", this.props);
+    }
   render() {
     return (
       <div className="App">
@@ -19,15 +23,19 @@ class App extends Component {
          
         </header>
         <HashRouter>
-          <Route path='/feeling' component={Feeling} />
-          <Link to="/feeling">Get started!</Link>
+          <Route exact path='/' render={(props) => <Feeling {...props} dispatch={this.props.dispatch}/>} />
+          <Route path='/understanding' render={(props) => <Understanding {...props} dispatch={this.props.dispatch}/>} />
+          <Route path='/supported' render={(props) => <Supported {...props} dispatch={this.props.dispatch}/>} />
+          <Route path='/comments' render={(props) => <Comments {...props} dispatch={this.props.dispatch}/>} />
+          <Route path='/reviewing' render={(props) => <Reviewing {...props} dispatch={this.props.dispatch}/>} />
+        
+          
           </HashRouter>
         <br/>
-        <Feeling />
-        <Understanding  />
-        <Supported />
-        <Comments />
-        <Reviewing />
+       
+
+     
+        
       </div>
     );
   }

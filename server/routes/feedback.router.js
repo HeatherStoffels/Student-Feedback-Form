@@ -8,12 +8,12 @@ router.post('/', (req, res) => {
         VALUES ($1, $2, $3, $4, $5, $6)`;
     pool.query(sqlText, [newFeedback.feeling, newFeedback.understanding, newFeedback.support, newFeedback.comments, newFeedback.flagged, newFeedback.date])
       .then((result) => {
-        //console.log(`Added food to the database`, newItem);
+      
         res.sendStatus(201);
       })
       .catch((error) => {
         console.log(`Error making database query ${sqlText}`, error);
-        res.sendStatus(500); // Good server always responds
+        res.sendStatus(500); 
       })
   })
   
