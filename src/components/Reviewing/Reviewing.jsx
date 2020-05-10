@@ -9,14 +9,9 @@ class Reviewing extends Component {
 
     submitFeedback = ()=>{
         console.log("submit was clicked");
+        this.props.history.push("/done");
         // axios post here
-//         let feedback = {
-//     feeling: state.feedback.feeling,
-//     understanding: state.feedback.understanding,
-//     support: state.feedback.support,
-//     comments: state.feedback.comments,
-//     date: "2020-05-09",
-//   };
+
   axios.post("./feedback",this.props.reduxState)
     .then((response) => {
       console.log("back from post with", response.data);
@@ -24,6 +19,7 @@ class Reviewing extends Component {
     .catch((err) => {
       console.log("error in post", err);
     });
+    
     }
   render() {
     return (

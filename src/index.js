@@ -11,26 +11,27 @@ import { Provider } from "react-redux";
 
 const firstReducerInitialState = {};
 
-
 const firstReducer = (state = firstReducerInitialState, action) => {
   //   console.log("in firstReducer");
   if (action.type === "feeling") {
     console.log("in first reducer", action, state);
     return { ...state, feeling: action.payload };
   } else if (action.type === "understanding") {
-      console.log("in first reducer" , action.type, state);
+    console.log("in first reducer", action.type, state);
     return { ...state, understanding: action.payload };
   } else if (action.type === "support") {
-    console.log("in first reducer" , action.type, state);
-    return { ...state, support: action.payload};
+    console.log("in first reducer", action.type, state);
+    return { ...state, support: action.payload };
   } else if (action.type === "comments") {
-    console.log("in first reducer" , action.type, state);
+    console.log("in first reducer", action.type, state);
     return { ...state, comments: action.payload };
   }
-  
 };
 
-const storeInstance = createStore(firstReducer);
+const storeInstance = createStore(
+  firstReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
   <Provider store={storeInstance}>

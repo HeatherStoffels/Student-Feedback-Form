@@ -8,6 +8,7 @@ import Understanding from "../Understanding/Understanding"
 import Support from "../Support/Support"
 import Comments from "../Comments/Comments"
 import Reviewing from "../Reviewing/Reviewing"
+import Done from "../Done/Done"
 
 class App extends Component {
 
@@ -28,6 +29,7 @@ class App extends Component {
           <Route path='/support' render={(props) => <Support {...props} dispatch={this.props.dispatch}/>} />
           <Route path='/comments' render={(props) => <Comments {...props} dispatch={this.props.dispatch}/>} />
           <Route path='/reviewing' render={(props) => <Reviewing {...props} dispatch={this.props.dispatch} reduxState={this.props.reduxState}/>} />
+          <Route path='/done' render={(props) => <Done {...props} dispatch={this.props.dispatch}/>} />
           </HashRouter>
         <br/>
       </div>
