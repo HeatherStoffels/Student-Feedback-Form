@@ -35,6 +35,7 @@ class Admin extends Component {
     return (
       <div>
         <h1>You're in Admin! </h1>
+        {/* need to figure out how to display this nicely */}
        <h1>{JSON.stringify(this.state.feedbackList)}</h1>
        <button onClick={this.getFeedback}>Feedback list</button>
       </div>
