@@ -8,6 +8,7 @@ class Feeling extends Component {
   componentDidMount() {
     console.log("component did mount", this.props);
   }
+
   handleChange = (event, property) => {
     console.log("in handlechange");
     if (property === "feeling")
@@ -39,6 +40,9 @@ class Feeling extends Component {
         <p>
           Head to understanding!<button onClick={this.handleClick}>Next</button>
         </p>
+        
+        
+    
       </div>
     );
   }

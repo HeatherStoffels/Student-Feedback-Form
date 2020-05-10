@@ -6,6 +6,9 @@ class Reviewing extends Component {
   componentDidMount() {
     console.log("component did mount", this.props.dispatch);
   }
+  backButton = ()=>{
+    this.props.history.push("/comments");
+  }
 
   submitFeedback = () => {
     console.log("submit was clicked");
@@ -32,6 +35,7 @@ class Reviewing extends Component {
           Almost done!
           <button onClick={this.submitFeedback}>Submit Feedback</button>
         </p>
+        <button onClick={this.backButton}>Back</button>
       </div>
     );
   }

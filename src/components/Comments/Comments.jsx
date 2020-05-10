@@ -8,6 +8,9 @@ class Comments extends Component {
   componentDidMount() {
     console.log("component did mount", this.props);
   }
+  backButton = ()=>{
+    this.props.history.push("/support");
+  }
   handleChange = (event, property) => {
     console.log("in handlechange");
     if (property === "comments")
@@ -33,6 +36,7 @@ class Comments extends Component {
         <p>
           Head to review! <button onClick={this.handleClick}>Click here</button>
         </p>
+        <button onClick={this.backButton}>Back</button>
       </div>
     );
   }
