@@ -18,6 +18,11 @@ class Support extends Component {
         [property]: event.target.value,
       });
   };
+  adminPage = () => {
+    console.log("in admin page");
+    this.props.history.push("/admin");
+}
+
 
   handleClick = () => {
     console.log("in handleClick");
@@ -28,6 +33,7 @@ class Support extends Component {
   render() {
     return (
       <div>
+          <header><button onClick={this.adminPage}>Admin</button></header>
         <h1>How supported are you feeling today?</h1>
         <select
           id="support"

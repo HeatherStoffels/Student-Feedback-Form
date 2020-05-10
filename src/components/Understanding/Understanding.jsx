@@ -4,6 +4,10 @@ class Understanding extends Component {
   state = {
     understanding: "1",
   };
+  adminPage = () => {
+    console.log("in admin page");
+    this.props.history.push("/admin");
+}
 
   componentDidMount() {
     console.log("component did mount", this.props);
@@ -30,6 +34,7 @@ class Understanding extends Component {
   render() {
     return (
       <div>
+          <header><button onClick={this.adminPage}>Admin</button></header>
         <h1>How well are you understanding the material today?</h1>
         <select
           id="understanding"

@@ -23,9 +23,15 @@ class Feeling extends Component {
 
     this.props.history.push("/understanding");
   };
+ 
+  adminPage = () => {
+    console.log("in admin page");
+    this.props.history.push("/admin");
+}
   render() {
     return (
       <div>
+          <header><button onClick={this.adminPage}>Admin</button></header>
         <h1>How are you feeling today?</h1>
         <select
           id="feeling"

@@ -4,6 +4,10 @@ class Comments extends Component {
   state = {
     comments: "",
   };
+  adminPage = () => {
+    console.log("in admin page");
+    this.props.history.push("/admin");
+}
 
   componentDidMount() {
     console.log("component did mount", this.props);
@@ -27,6 +31,7 @@ class Comments extends Component {
   render() {
     return (
       <div>
+          <header><button onClick={this.adminPage}>Admin</button></header>
         <h1>Any additional comments you would like to share?</h1>
         <input
           type="text"

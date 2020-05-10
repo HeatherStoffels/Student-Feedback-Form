@@ -6,6 +6,10 @@ class Reviewing extends Component {
   componentDidMount() {
     console.log("component did mount", this.props.dispatch);
   }
+  adminPage = () => {
+    console.log("in admin page");
+    this.props.history.push("/admin");
+}
   backButton = ()=>{
     this.props.history.push("/comments");
   }
@@ -27,6 +31,7 @@ class Reviewing extends Component {
   render() {
     return (
       <div>
+          <header><button onClick={this.adminPage}>Admin</button></header>
         <h3>Feeling: {this.props.reduxState.feeling}</h3>
         <h3>Understanding: {this.props.reduxState.understanding}</h3>
         <h3>Support: {this.props.reduxState.support}</h3>
