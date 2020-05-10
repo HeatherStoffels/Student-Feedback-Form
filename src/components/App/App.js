@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { HashRouter, Route} from "react-router-dom";
 import Feeling from "../Feeling/Feeling"
 import Understanding from "../Understanding/Understanding"
-import Supported from "../Supported/Supported"
+import Support from "../Support/Support"
 import Comments from "../Comments/Comments"
 import Reviewing from "../Reviewing/Reviewing"
 
@@ -25,15 +25,11 @@ class App extends Component {
         <HashRouter>
           <Route exact path='/' render={(props) => <Feeling {...props} dispatch={this.props.dispatch}/>} />
           <Route path='/understanding' render={(props) => <Understanding {...props} dispatch={this.props.dispatch}/>} />
-          <Route path='/supported' render={(props) => <Supported {...props} dispatch={this.props.dispatch}/>} />
+          <Route path='/support' render={(props) => <Support {...props} dispatch={this.props.dispatch}/>} />
           <Route path='/comments' render={(props) => <Comments {...props} dispatch={this.props.dispatch}/>} />
-          <Route path='/reviewing' render={(props) => <Reviewing {...props} dispatch={this.props.dispatch}/>} />
+          <Route path='/reviewing' render={(props) => <Reviewing {...props} dispatch={this.props.dispatch} reduxState={this.props.reduxState}/>} />
           </HashRouter>
         <br/>
-       
-
-     
-        
       </div>
     );
   }

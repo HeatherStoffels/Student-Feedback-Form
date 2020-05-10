@@ -1,22 +1,34 @@
 import React, {Component} from 'react';
 
 
-
 class Understanding extends Component {
+   
+    state={
+        understanding: "1",
+    }
+
   
     componentDidMount(){
-        console.log('component did mount', this.props.dispatch);
+        console.log('component did mount', this.props);
+    }
+    handleChange = (event, property)=>{
+        console.log('in handlechange' )
+        if (property === "understanding")
+        this.setState({
+            [property]: event.target.value
+        })
     }
 
     handleClick = () => {
         console.log('in handleClick');
-        this.props.history.push('/supported');
+        this.props.dispatch({type: "understanding", payload: this.state.understanding})
+        this.props.history.push('/support');
     }
   render() {
     return (
       <div>
           <h1>How well are you understanding the material today?</h1>
-          <select id="understanding">
+          <select id="understanding" onChange={(event)=>this.handleChange(event, "understanding")}>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>

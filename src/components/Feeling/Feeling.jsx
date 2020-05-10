@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 
 class Feeling extends Component {
-    state = {
-        feeling: "",
+    state={
+        feeling: "1",
     }
 
     componentDidMount(){
@@ -19,10 +19,8 @@ class Feeling extends Component {
 
     handleClick = () => {
         console.log('in handleClick');
-        this.props.dispatch({type: "feeling", payload: this.state})
+        this.props.dispatch({type: "feeling", payload: this.state.feeling})
         
-
-
         this.props.history.push('/understanding');
     }
   render() {
